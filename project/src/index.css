@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+:root {
+  --primary: #0A1128;
+  --accent: #FF3366;
+  --text: #FFFFFF;
+}
+
+body {
+  @apply bg-[#0A1128] text-white font-serif;
+  overflow-x: hidden;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #FF3366 0%, #FF6B6B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.honeycomb {
+  background-image: radial-gradient(circle at center center, transparent 0%, #0A1128),
+    repeating-linear-gradient(135deg, #0A1128 0px, #0A1128 2px, transparent 2px, transparent 10px),
+    repeating-linear-gradient(45deg, #112244 0px, #112244 2px, transparent 2px, transparent 10px),
+    linear-gradient(90deg, #0A1128, #0A1128);
+}
+
+.blob {
+  background: linear-gradient(135deg, #FF3366 0%, #FF6B6B 100%);
+  filter: blur(70px);
+  opacity: 0.4;
+  animation: breathe 8s ease-in-out infinite;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.rotating {
+  animation: rotate 20s linear infinite;
+}
+
+.section-title {
+  @apply text-6xl md:text-8xl font-bold mb-8 tracking-tight;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
